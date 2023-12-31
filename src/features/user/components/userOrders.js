@@ -98,64 +98,64 @@ export default function UserOrders() {
                 </div>
               </div>
               {/* Summary */}
-              <div class="flex justify-centerflex-col md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-                <div class="shadow-inner dark:shadow-black/40 rounded border border-2 flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full space-y-6">
-                  <h3 class="text-xl font-semibold leading-5 text-gray-500">
+              <div className="flex justify-centerflex-col md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+                <div className="shadow-inner dark:shadow-black/40 rounded border border-2 flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full space-y-6">
+                  <h3 className="text-xl font-semibold leading-5 text-gray-500">
                     Summary
                   </h3>
-                  <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-400 border-b-2 pb-4">
-                    <div class="flex justify-between w-full">
-                      <p class="text-base leading-4 text-gray-600">Subtotal</p>
-                      <p class="text-base leading-4 text-gray-600">
+                  <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-400 border-b-2 pb-4">
+                    <div className="flex justify-between w-full">
+                      <p className="text-base leading-4 text-gray-600">Subtotal</p>
+                      <p className="text-base leading-4 text-gray-600">
                         ${order.totalAmount}
                       </p>
                     </div>
-                    <div class="flex justify-between items-center w-full">
-                      <p class="text-base leading-4 text-gray-600">Discount</p>
-                      <p class="text-base leading-4 text-gray-600">
+                    <div className="flex justify-between items-center w-full">
+                      <p className="text-base leading-4 text-gray-600">Discount</p>
+                      <p className="text-base leading-4 text-gray-600">
                         Already calculated
                       </p>
                     </div>
-                    <div class="flex justify-between items-center w-full">
-                      <p class="text-base leading-4 text-gray-600">Shipping</p>
-                      <p class="text-base text-green-300 leading-4 text-green-800">
+                    <div className="flex justify-between items-center w-full">
+                      <p className="text-base leading-4 text-gray-600">Shipping</p>
+                      <p className="text-base text-green-300 leading-4 text-green-800">
                         Free
                       </p>
                     </div>
                   </div>
-                  <div class="flex justify-between items-center w-full">
-                    <p class="text-base font-semibold leading-4 text-gray-600">
+                  <div className="flex justify-between items-center w-full">
+                    <p className="text-base font-semibold leading-4 text-gray-600">
                       Total
                     </p>
-                    <p class="text-base font-semibold leading-4 text-gray-600">
+                    <p className="text-base font-semibold leading-4 text-gray-600">
                       ${order.totalAmount}
                     </p>
                   </div>
                 </div>
                 {/* Shipping Address */}
-                <div class=" shadow-inner dark:shadow-black/40 rounded border border-2 justify-center px-4 py-6 md:p-6 xl:p-8 w-full space-y-6">
-                  <h3 class="text-xl  font-semibold leading-5 text-gray-700">
+                <div className=" shadow-inner dark:shadow-black/40 rounded border border-2 justify-center px-4 py-6 md:p-6 xl:p-8 w-full space-y-6">
+                  <h3 className="text-xl  font-semibold leading-5 text-gray-700">
                     Shipping Address
                   </h3>
-                  <div class="flex justify-between items-center w-full">
-                    <p class=" text-sm text-gray-600">
+                  <div className="flex justify-between items-center w-full">
+                    <p className=" text-sm text-gray-600">
                       Email : {order.selectedAddress.email}
                     </p>
                   </div>
-                  <div class="flex justify-between items-center w-full">
-                    <p class=" text-sm text-gray-600">
+                  <div className="flex justify-between items-center w-full">
+                    <p className=" text-sm text-gray-600">
                       Number : {order.selectedAddress.phone}
                     </p>
                   </div>
-                  <div class="flex justify-between items-center w-full">
-                    <p class=" text-sm text-gray-600">
+                  <div className="flex justify-between items-center w-full">
+                    <p className=" text-sm text-gray-600">
                       {order.selectedAddress.street},
                       {order.selectedAddress.city}
                     </p>
                   </div>
 
-                  <div class="">
-                    <p class=" flex text-sm text-gray-600">
+                  <div className="">
+                    <p className=" flex text-sm text-gray-600">
                       {order.selectedAddress.region},
                       {order.selectedAddress.pinCode}
                     </p>
@@ -166,11 +166,11 @@ export default function UserOrders() {
           </>
         ))}
       {status === "loading" ? (
-        <div class="bg-white rounded-lg shadow-md p-4 animate-pulse">
-          <div class="w-2/3 h-4 bg-gray-300 rounded mb-2"></div>
-          <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-          <div class="w-full h-8 bg-gray-300 rounded mb-2"></div>
-          <div class="w-1/2 h-8 bg-gray-300 rounded"></div>
+        <div className="bg-white rounded-lg shadow-md p-4 animate-pulse">
+          <div className="w-2/3 h-4 bg-gray-300 rounded mb-2"></div>
+          <div className="w-full h-8 bg-gray-300 rounded mb-2"></div>
+          <div className="w-full h-8 bg-gray-300 rounded mb-2"></div>
+          <div className="w-1/2 h-8 bg-gray-300 rounded"></div>
         </div>
       ) : null}
     </div>

@@ -184,20 +184,20 @@ export default function ProductList() {
   return (
     <>
       {/* for puch hole shadow add this just below -> shadow-inner dark:shadow-black/40*/}
-      <div class=" h-[600px] rounded flex items-center justify-center w-auto overflow-hidden z-50 ">
-        <div class="relative mx-auto h-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
-          <div class="flex flex-col items-center justify-between lg:flex-row py-16">
-            <div class=" relative ">
-              <div class="lg:max-w-xl lg:pr-5 relative z-40">
-                <h2 class=" max-w-lg text-5xl leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
+      <div className=" h-[600px] rounded flex items-center justify-center w-auto overflow-hidden z-50 ">
+        <div className="relative mx-auto h-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+          <div className="flex flex-col items-center justify-between lg:flex-row py-16">
+            <div className=" relative ">
+              <div className="lg:max-w-xl lg:pr-5 relative z-40">
+                <h2 className=" max-w-lg text-5xl leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
                   Heart Beat For Your
-                  <span class=" px-4 text-purple-500 itallic">Trendy!</span>
+                  <span className=" px-4 text-purple-500 itallic">Trendy!</span>
                   Finds
                 </h2>
               </div>
             </div>
-            <div class="relative hidden lg:ml-32 lg:block lg:w-1/2">
-              <div class="abg-orange-400 shadow-2xl mx-auto w-fit overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none">
+            <div className="relative hidden lg:ml-32 lg:block lg:w-1/2">
+              <div className="abg-orange-400 shadow-2xl mx-auto w-fit overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none">
                 <img src={product1} />
               </div>
             </div>
@@ -226,14 +226,14 @@ export default function ProductList() {
 
                 <div className="flex items-center">
                   {/* //! search box */}
-                  <div class="relative  sm:block mx-3  ">
-                    <label class="sr-only" for="search">
+                  <div className="relative  sm:block mx-3  ">
+                    <label className="sr-only" for="search">
                       {" "}
                       Search{" "}
                     </label>
                     <div className="">
                       <input
-                        class="outline-none shadow-inner shadow-b dark:shadow-black/40 h-10 w-full rounded-lg border-none pe-10 ps-4 text-sm shadow-sm sm:w-60"
+                        className="outline-none shadow-inner shadow-b dark:shadow-black/40 h-10 w-full rounded-lg border-none pe-10 ps-4 text-sm shadow-sm sm:w-60"
                         id="search"
                         type="search"
                         placeholder="Search website..."
@@ -247,12 +247,12 @@ export default function ProductList() {
 
                     <button
                       type="button"
-                      class="absolute end-1 top-1/2 -translate-y-1/2 rounded-md p-2 text-gray-600 transition hover:text-gray-700"
+                      className="absolute end-1 top-1/2 -translate-y-1/2 rounded-md p-2 text-gray-600 transition hover:text-gray-700"
                     >
-                      <span class="sr-only">Search</span>
+                      <span className="sr-only">Search</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
+                        className="h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

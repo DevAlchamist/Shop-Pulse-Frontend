@@ -252,24 +252,24 @@ function Navbar({ children }) {
         </div>
       )}
       {/* Footer */}
-      <div class="max-w-auto mt-5 mx-9">
-        <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 ">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <div className="max-w-auto mt-5 mx-9">
+        <footer className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 ">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023 All Rights Reserved.
           </span>
-          <ul class="flex flex-wrap items-center mt-3 sm:mt-0">
+          <ul className="flex flex-wrap items-center mt-3 sm:mt-0">
             <li>
               <Link
-                to="https://twitter.com/CoderMonkey19"
-                class=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
+                to="https://x.com/irl_introvert06"
+                className=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
               >
                 <IoLogoTwitter className="h-4 w-4 "></IoLogoTwitter>
               </Link>
             </li>
             <li>
               <Link
-                to="https://www.linkedin.com/in/nitin-jha-68a556276/"
-                class=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
+                to="https://www.linkedin.com/in/shubhanshu-nayak-9332562a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                className=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
                 target="_blank"
               >
                 <IoLogoLinkedin className="shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 h-4 w-4 "></IoLogoLinkedin>
@@ -277,9 +277,9 @@ function Navbar({ children }) {
             </li>
             <li>
               <Link
-                to="https://github.com/nitinjha04"
+                to="https://github.com/DevAlchamist"
                 target="_blank"
-                class=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
+                className=" mr-4 px-2 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
               >
                 <IoLogoGithub className="shadow-lg hover:shadow-xl hover:transform hover:scale-255 duration-300 h-4 w-4 "></IoLogoGithub>
               </Link>
@@ -287,7 +287,7 @@ function Navbar({ children }) {
             <li>
               <Link
                 to="/contact"
-                class=" text-sm text-gray-500 dark:text-gray-400"
+                className=" text-sm text-gray-500 dark:text-gray-400"
               >
                 <UserCircleIcon className="shadow-lg hover:shadow-xl hover:transform hover:scale-255 duration-300 h-5 w-5 mb-0"></UserCircleIcon>
               </Link>

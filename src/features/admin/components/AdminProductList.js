@@ -194,14 +194,14 @@ export default function AdminProductList() {
 
                 <div className="flex items-center">
                   {/* //! search box */}
-                  <div class="relative  sm:block mx-3  ">
-                    <label class="sr-only" for="search">
+                  <div className="relative  sm:block mx-3  ">
+                    <label className="sr-only" for="search">
                       {" "}
                       Search{" "}
                     </label>
 
                     <input
-                      class="outline-none shadow-inner shadow-b dark:shadow-black/40 h-10 w-full rounded-lg border-none pe-10 ps-4 text-sm shadow-sm sm:w-60"
+                      className="outline-none shadow-inner shadow-b dark:shadow-black/40 h-10 w-full rounded-lg border-none pe-10 ps-4 text-sm shadow-sm sm:w-60"
                       id="search"
                       type="search"
                       placeholder="Search website..."
@@ -213,12 +213,12 @@ export default function AdminProductList() {
 
                     <button
                       type="button"
-                      class="absolute end-1 top-1/2 -translate-y-1/2 rounded-md  p-2 text-gray-600 transition hover:text-gray-700"
+                      className="absolute end-1 top-1/2 -translate-y-1/2 rounded-md  p-2 text-gray-600 transition hover:text-gray-700"
                     >
-                      <span class="sr-only">Search</span>
+                      <span className="sr-only">Search</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
+                        className="h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
