@@ -73,7 +73,7 @@ function AdminOrders() {
   return (
     <>
       <div className="overflow-x-auto  shadow-xl dark:shadow-black/40">
-        <div className="flex items-center  rounded-xl justify-center bg-gray-100 font-sans overflow-hidden">
+        <div className="flex items-center  rounded-xl justify-center bg-gray-100 font-sans overflow-auto">
           <div className="w-auto ">
             <div className=" bg-white rounded my-6">
               <table className="  rounded border border-gray-300 table-auto">

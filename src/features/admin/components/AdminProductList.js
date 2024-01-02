@@ -188,7 +188,7 @@ export default function AdminProductList() {
 
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-8">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-4xl font-bold lg:block hidden tracking-tight text-gray-900">
                   All Products
                 </h1>
 
@@ -309,7 +309,7 @@ export default function AdminProductList() {
                     <div className=" px-8">
                       <Link
                         to="/admin/product-form"
-                        className=" mt-1 inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500  sm:w-auto"
+                        className=" mt-1 inline-flex lg:w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500  sm:w-auto"
                       >
                         Add New Product
                       </Link>

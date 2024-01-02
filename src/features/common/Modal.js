@@ -4,33 +4,41 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { toast } from "react-toastify";
 
-const Modal = ({title,action,cancel,message, OpenAction,showModal}) => {
+const Modal = ({
+  title,
+  action,
+  cancel,
+  message,
+  OpenAction,
+  showModal,
+  onCancel,
+}) => {
   const [open, setOpen] = useState(false);
 
   const cancelButtonRef = useRef(null);
 
-  const handleOpenAction = ()=>{
-    setOpen(false)
+  const handleOpenAction = () => {
+    setOpen(false);
     toast.info("Product Deleted", {
-        position: "top-left",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "colored",
-      });
-    OpenAction()
-  }
+      position: "top-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+    });
+    OpenAction();
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     if (showModal) {
-      setOpen(true)
-    }else{
-      setOpen(false)
+      setOpen(true);
+    } else {
+      setOpen(false);
     }
-  },[showModal])
+  }, [showModal]);
   return (
     <div>
       <Transition.Root show={open} as={Fragment}>
@@ -80,9 +88,7 @@ const Modal = ({title,action,cancel,message, OpenAction,showModal}) => {
                           {title}
                         </Dialog.Title>
                         <div className="mt-2">
-                          <p className="text-sm text-gray-500">
-                            {message}
-                          </p>
+                          <p className="text-sm text-gray-500">{message}</p>
                         </div>
                       </div>
                     </div>
@@ -98,7 +104,10 @@ const Modal = ({title,action,cancel,message, OpenAction,showModal}) => {
                     <button
                       type="button"
                       className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                      onClick={() => setOpen(false)}
+                      onClick={() => {
+                        setOpen(false);
+                        onCancel();
+                      }}
                       ref={cancelButtonRef}
                     >
                       {cancel}

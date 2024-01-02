@@ -16,10 +16,11 @@ import Modal from "../common/Modal";
 
 export default function Cart() {
   const items = useSelector(selectItems);
-  const [openModal, SetOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const cartLoaded = useSelector(selectCartLoaded)
   const dispatch = useDispatch();
+  const [selectedItemId, setSelectedItemId] = useState(null);
 
   const totalAmount = items.reduce(
     (amount, item) => item.product.discountPrice * item.quantity + amount,
@@ -40,6 +41,11 @@ export default function Cart() {
     dispatch(deleteItemFromCartAsync(id));
   };
 
+  const handleCancel = (e) => {
+    setOpenModal(false); // Function to close the modal
+    setSelectedItemId(null); // Reset the selected item ID
+  };
+
   return (
     <>
       {!items.length && cartLoaded && <Navigate to="/" replace={true} />}
@@ -53,7 +59,7 @@ export default function Cart() {
         />
         <div className="">
           <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
-          <div className="mx-auto max-w-5xl flex justify-center px-6 md:space-x-6 xl:px-0">
+          <div className=" mx-auto max-w-5xl lg:flex md:flex sm:block justify-center px-6 md:space-x-6 xl:px-0">
             <div className="rounded-lg h-[250px] shadow-lg dark:shadow-black/40 overflow-y-auto md:w-2/3 border border-2">
               {items.map((item) => (
                 <div className="">
@@ -75,8 +81,6 @@ export default function Cart() {
                              onClick={() => {
                               if (item.quantity === 1) {
                                 return;
-                                // if want to add more functionality
-                                SetOpenModal(item.id);
                               } else {
                                 handleQuantity(
                                   { target: { value: item.quantity - 1 } },
@@ -117,7 +121,8 @@ export default function Cart() {
                           </div>
                           <div
                             onClick={(e) => {
-                              SetOpenModal(item.id);
+                              setOpenModal(true);
+                              setSelectedItemId(item.id);
                             }}
                             className="text-red-600 w-6 h-6 cursor-pointer"
                           >
@@ -132,7 +137,8 @@ export default function Cart() {
                             action="Delete"
                             cancel="Cancel"
                             OpenAction={(e) => handleRemove(e, item.id)}
-                            showModal={openModal === item.id}
+                            showModal={openModal && selectedItemId === item.id}
+                            onCancel={handleCancel}
                           ></Modal>
                         </div>
                       </div>

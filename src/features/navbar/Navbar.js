@@ -149,8 +149,28 @@ function Navbar({ children }) {
                         </Menu>
                       </div>
                     </div>
-                    <div className="-mr-2 flex md:hidden">
+                    <div className="mr-2 flex md:hidden">
                       {/* Mobile menu button */}
+                      <div className="flex items-center px-5">
+                      <Link to="/my-cart">
+                        <button
+                          type="button"
+                          className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span className="absolute -inset-1.5" />
+                          <span className="sr-only">View notifications</span>
+                          <ShoppingCartIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </Link>
+                      {items.length > 0 && (
+                        <span className=" z-50 inline-flex items-center rounded-md bg-red-50 mb-7 -ml-3 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                          {items.length}
+                        </span>
+                      )}
+                    </div>
                       <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-0.5" />
                         <span className="sr-only">Open main menu</span>
@@ -189,42 +209,8 @@ function Navbar({ children }) {
                       </Disclosure.Button>
                     ))}
                   </div>
+                    
                   <div className="border-t border-gray-700 pb-3 pt-4">
-                    <div className="flex items-center px-5">
-                      <div className="flex-shrink-0">
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src={user.imageUrl}
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-3">
-                        <div className="text-base font-medium leading-none text-white">
-                          {user.name}
-                        </div>
-                        <div className="text-sm font-medium leading-none text-gray-400">
-                          {user.email}
-                        </div>
-                      </div>
-                      <Link to="/my-cart">
-                        <button
-                          type="button"
-                          className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                        >
-                          <span className="absolute -inset-1.5" />
-                          <span className="sr-only">View notifications</span>
-                          <ShoppingCartIcon
-                            className="h-6 w-6"
-                            aria-hidden="true"
-                          />
-                        </button>
-                      </Link>
-                      {items.length > 0 && (
-                        <span className=" z-50 inline-flex items-center rounded-md bg-red-50 mb-7 -ml-3 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                          {items.length}
-                        </span>
-                      )}
-                    </div>
                     <div className="mt-3 space-y-1 px-2">
                       {userNavigation.map((item) => (
                         <Link to={item.link}>
@@ -254,10 +240,10 @@ function Navbar({ children }) {
       {/* Footer */}
       <div className="max-w-auto mt-5 mx-9">
         <footer className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 ">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm text-gray-500 hidden md:block lg:block text-center dark:text-gray-400">
             © 2023 All Rights Reserved.
           </span>
-          <ul className="flex flex-wrap items-center mt-3 sm:mt-0">
+          <ul className="flex flex-wrap items-center sm:justify-center mt-3 sm:mt-0">
             <li>
               <Link
                 to="https://x.com/irl_introvert06"

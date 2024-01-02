@@ -94,6 +94,7 @@ export default function ProductList() {
 
   const handleFilter = (e, section, option) => {
     const newFilter = { ...filter };
+    newFilter[section.id] = newFilter[section.id] || []; 
     if (e.target.checked) {
       if (newFilter[section.id]) {
         newFilter[section.id].push(option.value);
@@ -184,7 +185,7 @@ export default function ProductList() {
   return (
     <>
       {/* for puch hole shadow add this just below -> shadow-inner dark:shadow-black/40*/}
-      <div className=" h-[600px] rounded flex items-center justify-center w-auto overflow-hidden z-50 ">
+      <div className=" h-[600px] rounded hidden lg:flex items-center justify-center w-auto overflow-hidden z-50 ">
         <div className="relative mx-auto h-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row py-16">
             <div className=" relative ">
@@ -220,7 +221,7 @@ export default function ProductList() {
 
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-8">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-4xl font-bold lg:block hidden md:block tracking-tight text-gray-900">
                   All Products
                 </h1>
 
@@ -335,6 +336,7 @@ export default function ProductList() {
                   <DesktopFilter
                     handleFilter={handleFilter}
                     filters={filters}
+                    filter={filter}
                   />
 
                   {/* Product grid */}
@@ -484,7 +486,7 @@ function MobileFilter({
     </div>
   );
 }
-function DesktopFilter({ handleFilter, filters }) {
+function DesktopFilter({ handleFilter, filters, filter}) {
   return (
     <div>
       <form className="hidden lg:block">
@@ -519,7 +521,9 @@ function DesktopFilter({ handleFilter, filters }) {
                           name={`${section.id}[]`}
                           defaultValue={option.value}
                           type="checkbox"
-                          defaultChecked={option.checked}
+                          checked={
+                            filter && filter[section.id]?.includes(option.value)
+                          }
                           onChange={(e) => handleFilter(e, section, option)}
                           className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
