@@ -9,7 +9,6 @@ import {
   deleteItemFromCartAsync,
   selectCartLoaded,
 } from "./cartSlice";
-import { discountedPrice } from "../../app/constants";
 
 import "../../index.css";
 import Modal from "../common/Modal";
@@ -18,12 +17,13 @@ export default function Cart() {
   const items = useSelector(selectItems);
   const [openModal, setOpenModal] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const cartLoaded = useSelector(selectCartLoaded)
+  const cartLoaded = useSelector(selectCartLoaded);
   const dispatch = useDispatch();
   const [selectedItemId, setSelectedItemId] = useState(null);
+  console.log(items);
 
   const totalAmount = items.reduce(
-    (amount, item) => item.product.discountPrice * item.quantity + amount,
+    (amount, item) => item.product?.discountedPrice * item.quantity + amount,
     0
   );
   const totalItem = items.reduce((total, item) => item.quantity + total, 0);
@@ -31,8 +31,8 @@ export default function Cart() {
   const [open, setOpen] = useState(true);
   // const count = useSelector(selectCount);
 
+  // console.log(item.id);
   const handleQuantity = (e, item) => {
-    console.log(item.id);
     dispatch(updateCartAsync({ id: item.id, quantity: +e.target.value }));
 
     // setQuantity(e.target.value);
@@ -48,7 +48,9 @@ export default function Cart() {
 
   return (
     <>
-      {!items.length && cartLoaded && <Navigate to="/" replace={true} />}
+      {items.product === null && cartLoaded && (
+        <Navigate to="/" replace={true} />
+      )}
 
       <>
         <style
@@ -78,7 +80,7 @@ export default function Cart() {
                       <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                         <div className="flex items-center border-gray-100">
                           <span
-                             onClick={() => {
+                            onClick={() => {
                               if (item.quantity === 1) {
                                 return;
                               } else {

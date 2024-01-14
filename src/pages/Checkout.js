@@ -38,7 +38,7 @@ function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("cash");
 
   const totalAmount = items.reduce(
-    (amount, item) => item.product.discountPrice * item.quantity + amount,
+    (amount, item) => item.product.discountedPrice * item.quantity + amount,
     0
   );
   const totalItem = items.reduce((total, item) => item.quantity + total, 0);
@@ -388,9 +388,7 @@ function Checkout() {
                                   {item.product.title}
                                 </a>
                               </h3>
-                              <p className="ml-4">
-                                ${item.product.price}
-                              </p>
+                              <p className="ml-4">${item.product.price}</p>
                             </div>
                             <p className="mt-1 text-sm text-gray-500">
                               {item.product.brand}

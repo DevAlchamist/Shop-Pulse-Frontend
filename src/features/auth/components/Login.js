@@ -23,14 +23,14 @@ export default function Login() {
     <div className="bg-[#92b3dc] h-screen">
       {user && <Navigate to="/" replace={true} />}
       <div className="flex justify-center">
-        <div className="h-auto w-[30%]  flex flex-col justify-center sm:py-12">
+        <div className="h-auto w-fit  flex flex-col justify-center sm:py-12">
         <div className="text-center flex justify-center text-3xl">
           Shop 
           <div className="text-pink-400 flex">
           Pulse
           </div>
         </div>
-          <div className="p-5 xs:p-0 mx-auto md:w-full md:max-w-full">
+          <div className="p-5 md:w-auto md:max-w-fit">
             <div className=" p-3 transition 5s ease-in-out hover:border-gray-400 hover:shadow-2xl dark:shadow-black/40 w-auto rounded-lg divide-y divide-gray-200">
               <form
                 noValidate

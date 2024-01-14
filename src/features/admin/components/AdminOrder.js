@@ -73,14 +73,14 @@ function AdminOrders() {
   return (
     <>
       <div className="overflow-x-auto  shadow-xl dark:shadow-black/40">
-        <div className="flex items-center  rounded-xl justify-center bg-gray-100 font-sans overflow-auto">
-          <div className="w-auto ">
+        <div className="flex items-center  rounded-xl justify-center bg-gray-100 font-sans overflow-x-auto">
+          <div className="w-full ">
             <div className=" bg-white rounded my-6">
               <table className="  rounded border border-gray-300 table-auto">
                 <thead>
                   <tr className="bg-[#92C3DC] text-gray-600 uppercase text-sm leading-normal">
                     <th
-                      className="py-3 flex text-left  cursor-pointer"
+                      className="py-6 mx-auto flex justify-center  cursor-pointer"
                       onClick={(e) =>
                         handleSort({
                           sort: "id",
@@ -174,7 +174,7 @@ function AdminOrders() {
                         ))}
                       </td>
                       {/* //! total amount */}
-                      <td className="py-3 px-6 text-center">
+                      <td className="py-3 px-9 text-center ">
                         <div className="flex items-center justify-center">
                           ${order.totalAmount}
                         </div>

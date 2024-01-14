@@ -23,7 +23,7 @@ export default function Signup() {
     <div className="bg-[#92b3dc] h-screen">
       {user && <Navigate to="/" replace={true} />}
       <div className="flex shadow-4xl justify-center dark:shadow-black/40" >
-        <div className="flex h-auto w-[30%] flex-col justify-center py-12 lg:px-8">
+        <div className="flex h-auto w-full flex-col justify-center py-12 lg:px-8">
         <div className="text-center flex justify-center text-3xl">
           Shop 
           <div className="text-pink-400 flex">
